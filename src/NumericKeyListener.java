@@ -1,6 +1,5 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.regex.*;
 
 public class NumericKeyListener implements KeyListener {
 
@@ -23,5 +22,6 @@ public class NumericKeyListener implements KeyListener {
     public void keyReleased(KeyEvent keyEvent){
         String a = MyFrame.port_text.getText().replaceAll("[^\\d.]", "");
         MyFrame.port_text.setText(a);
+        Constants.port = Integer.parseInt(a);
     }
 }
