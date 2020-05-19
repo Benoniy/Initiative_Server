@@ -23,14 +23,5 @@ public class NumericKeyListener implements KeyListener {
     public void keyReleased(KeyEvent keyEvent){
         String a = MyFrame.port_text.getText().replaceAll("[^\\d.]", "");
         MyFrame.port_text.setText(a);
-
-        try {
-            int i = Integer.parseInt(MyFrame.port_text.getText());
-            if (i > 65535) {
-                MyFrame.port_text.setText("65535");
-            }
-        }
-        catch (Exception ignored){}
-
     }
 }
