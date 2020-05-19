@@ -1,4 +1,5 @@
 import UI_ELEMENTS.MyLabel;
+import UI_ELEMENTS.MyTextField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,6 +35,22 @@ public class MyFrame extends JFrame {
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        content_panel.add(new MyLabel("A"), gbc);
+        content_panel.add(new MyLabel("Server IP:"), gbc);
+
+        gbc.gridx = 1;
+        content_panel.add(Box.createHorizontalStrut(40), gbc);
+
+        gbc.gridx = 2;
+        content_panel.add(new MyLabel("Port:"), gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        content_panel.add(new MyLabel(Constants.ipv4), gbc);
+
+        gbc.gridx = 2;
+        MyTextField port_text = new MyTextField("");
+        content_panel.add(port_text, gbc);
+
+        this.validate();
     }
 }
