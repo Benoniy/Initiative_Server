@@ -7,6 +7,7 @@ import java.awt.*;
 public class MyFrame extends JFrame {
     private JPanel content_panel;
     static Color backgroundColor = new Color(240,240,240);
+    public static MyTextField port_text = new MyTextField("");
 
     MyFrame(){
         setTitle("Initiative server");
@@ -48,8 +49,8 @@ public class MyFrame extends JFrame {
         content_panel.add(new MyLabel(Constants.ipv4), gbc);
 
         gbc.gridx = 2;
-        MyTextField port_text = new MyTextField("");
         content_panel.add(port_text, gbc);
+        port_text.addKeyListener(new NumericKeyListener());
 
         this.validate();
     }
